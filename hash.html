@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <link rel="stylesheet" href = "./css/style.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Hashing</title>
+	</head>
+	
+	<body>
+
+        <div class="header">
+            <div class="container">
+				<span class = "title">Hashing
+					<img class = "titleImg" src = "./media/hash.png" alt = "hash" height="30">
+				</span>
+				<ul class = "nav">
+					<li><a href="hash.html">Cryptographic Hashing</a></li>
+                    <li><a href="index.html">Encryption</a></li>
+				</ul>
+			</div>
+
+		</div>
+		<div class = "container">
+			<h1>What is a Hashing?</h1>
+			Hashing is a <strong>ONE-WAY</strong> process used to convert an input of any length into a fixed length string of text with the
+			use of an algorithm (hash function). Since it is a one-way process, there is a lot less potential harm as hashing makes it more difficult for attackers
+			to obtain valuable information, if there was a case that your database were to be compromised/breached. <br><br>
+
+			<strong>What do you mean one-way?</strong><br>
+			Hashing is a one-way process in the sense that providing the input will give you the ourput, but having the output hash will not tell you anything about
+			what input was used to create the hash.
+			<br><br>
+
+
+			<strong>How do you use it if it is one-way?</strong><br>
+			Often when hashes are used and stores in any type of system, instead of getting the value from your database and checking if it matches what
+			the user inputted, instead it takes what the user inputted and passes it through a hash function then checks the database if it is present in the
+			appropriate section(proper password hash for specific user).
+
+		</div>
+
+		<div class = "container">
+			<h1>Properties Of (Good) Hash Functions</h1>
+			We said earlier that to create hashes we use functions like SHA-256 (Secure Hash Algorithm, which translates all inputs into a 256 bit string). However, 
+			we can't just use any function; there are some properties that we should uphold when creating hashes.
+			<ul>
+				<li><strong>Deterministic: </strong>No matter how many times you input the same data you will always get the same
+				hash output. If this were not the case then it would be pretty much impossible to keep track of what these hashes mean/represent.</li>
+		
+				<li><strong>Pre-Image Resistant: </strong>Infeasible (but not impossible) to determine the input data based on the output hash. Attacker would have to use
+					the brute force method when attempting to obtain the plaintext input.</li>
+		
+				<li><strong>A Small Change in Input Changes Whole Hash: </strong>No matter how small of a change in the input 
+				it will result in a large change on the outputted hash. This will help maintain the pre-image resistance from above
+				as even if the guess was close to the plaintext the hash output would be totally different.</li>
+		
+				<li><strong>Collision Resistant: </strong> Although not all hash functions are completely resistant to collisions 
+				(2 different inputs have same resulting output), a hash function is said to be collision resistant if it is hard to find
+				two inputs that hash to the same output.</li>
+			</ul>
+		</div>
+
+
+		<div class = "container">
+			<h1>Example Of When It Would be Helpful</h1>
+			<strong>Imagine you are creating an website and using MySQL as the database for your site. Your site involves having users
+			Login via username and password.</strong>
+			<br><br>
+			Rather than storing the usernames and passwords as plain text, you could/should probably store something like a hash. So IF your
+			database were breached via lets say SQL injections
+			(<a href="https://www.youtube.com/watch?v=ciNHn38EyRc"> example video of how SQL injections works here by Computerphile</a>) then
+			instead of providing the attackers with a list of usernames and passwords which they could imediately use, they would get a list of 
+			hashes which would take much longer for them to make use of because they would need to brute force it try to figure out what the plain text is.
+			This is the case because a small change in input could create a large change in the hash and therefore they cannot try to find patterns within the hash.<br><br>
+		</div>
+
+
+		<div class = "container">
+			<h1>Add Some Security with some Salt</h1>
+			Salting when it comes to hashing is the process of concatenating the input with a "salt"
+			so that even if 2 users had the same passwords and then they were salted then they would show up as 2 different hashes
+			(unless you get the case in which the input is the same AND the generated salt is also the same), as we discussed earlier a small
+			change in the input can create a very large difference in the resulting hash output.<br><br>
+
+				
+			<img id = "comic" src = "./media/comic1.png" alt = "Hash Brown Comix Relating to Salt Hash">
+		</div>
+
+		<div class = "container">
+            <h1>Encryption VS Hashing</h1>
+            The key difference bewteen cryptographic hashing and encryption is that hashing is a one-way process, while
+            encryption is a two-way process. This entails that using the output hash, one cannot use it to figure out what
+            the initial plaintext input was, but when it comes to an encrypted ciphertext using the cipher used (the key), 
+			one can decrypt the ciphertext to obtain the inital plaintext input. <br><br><br>
+			<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+		</div>
+
+		
+    </body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <link rel="stylesheet" href = "./css/style.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Encryption</title>
+	</head>
+	
+	<body>
+
+        <div class="header">
+            <div class="container">
+				<span class = "title">Encryption
+				</span>
+				<ul class = "nav">
+					<li><a href="hash.html">Cryptographic Hashing</a></li>
+                    <li><a href="index.html">Encryption</a></li>
+				</ul>
+			</div>
+        </div>
+
+        <div class="container">
+            <h1>What is this Site?</h1>
+            This is a website that discusses encryption, cryptographic hashing and the comparison between the two.
+            It is suggested that if you do not know the basics of these two you first go to the hash or encryption page
+            using the links in the top right.
+            <br><br>
+        </div>
+
+        <div class = "container">
+			<h1>What is Encryption?</h1>
+            Encryption is the <strong>TWO-WAY</strong>process of scambling information in a way such that it can
+            be unscambled/decrypted by someone else using a key. <br><br>
+
+            To encrypt data people use a cipher, which is pretty much another way of saying algorithm; a list of
+            steps and rules to follow. Knowing how this cipher works is usually the key required to decrypt a piece
+            of encrypted data.
+        </div>
+        
+        <div class = "container">
+			<h1>How does it Work?</h1>
+            As said about a cipher/algorithm is used to encrypt and decrypt data. Many types of algorithms exist to encrypt data. Here are some
+            easy to visualize examples.
+            <ul>
+                <li><strong>Shift Cipher: </strong>Probably the simplest example, this cipher simply shifts the alphabet by a fixed amount.</li>
+            </ul>
+            <img id = "comic" src = "./media/comic2.png" alt = "Alphabet Shift Representation">
+            <ul>
+                <li><strong>Substitution Cipher: </strong>Using this cipher, plaintext characters are replaced systematically, a faily simple
+                example of this type of cipher is ROT13, which places the english alphabet of 26 characters into 2 arrays of 13, a-m and n-z.
+                Using these 2 arrays, you replace a character with the index from one array with the character at the same index in the opposite array.
+                An example would be replacing all 'A's with 'N's and vice versa as they are both at the index 0 of the 2 opposing arrays. </li>
+            
+                <li><strong>Transposition Cipher: </strong>This algorithm uses a set of rules, which serve as the key to encrypt data. One example
+                of this type of cipher is the <strong>Rail Fence Cipher</strong>, which places the plaintext in a graph with n "tracks"/"rails" in a zig-zagonal 
+                pattern then using creating the output from what is in the "rails".<br>Here is a representation of encrypting the alphabet with 4 tracks.
+                As you can see AGMSY is from track 1, then tracks 2, 3, and 4 follow respectively.</li>
+            </ul>
+            <img id = "comic" src = "./media/comic3.png" alt = "Rail Fence Demo">
+
+		</div>
+
+
+		<div class = "container">
+			<h1>Example Of When It Would be Helpful</h1>
+			Imagine you are sending or recieving data online, if that data is valuable you would most likely want to encrypt the data 
+            so that the information you are sending is more secure. However, since you must also send the recipient the key, if the attacker gets access to both
+            the data and key, it is possible that they can decrypt the data.
+            <br><br><br>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+		</div>
+		
+
+    </body>
+
+</html>
